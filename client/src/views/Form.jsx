@@ -1,5 +1,6 @@
 
 import { NavLink } from "react-router-dom"
+import options from "../utils/options.js"
 
 export default function Form() {
 
@@ -16,8 +17,16 @@ export default function Form() {
               <select
                 className="border text-black cursor-pointer py-1 px-2 w-full text-lg"
               >
-                <option value="M-3020">M-3020</option>
-                <option value="M-4070">M-4070</option>
+                {
+                  options.printersOptions.map((option, index) => (
+                    <option
+                      key={option[index]}
+                      value={option}
+                    >
+                      {option}
+                    </option>
+                  ))
+                }
               </select>
             </div>
 
@@ -31,29 +40,55 @@ export default function Form() {
             </div>
 
             <div className="mx-4 my-4">
-              <p className="mb-2 text-lg">Status do Fusor</p>
+              <p className="mb-2 text-lg">Estado do Fusor</p>
               <select
                 className="border text-black cursor-pointer py-1 px-2 w-full text-lg"
               >
-                <option value="Bom">Bom</option>
-                <option value="Ruim">Ruim</option>
+                {
+                  options.fusorStatusOptions.map((option, index) => (
+                    <option
+                      key={option[index]}
+                      value={option}
+                    >
+                      {option}
+                    </option>
+                  ))
+                }
               </select>
             </div>
 
             <div className="mx-4 my-4">
               <p className="mb-2 text-lg">Setor</p>
-              <input
-                type="password"
-                className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
-                placeholder="01º Andar"
-              />
+              <select
+                className="border text-black cursor-pointer py-1 px-2 w-full text-lg"
+              >
+                {
+                  options.levelsOptions.map((option, index) => (
+                    <option
+                      key={option[index]}
+                      value={option}
+                    >
+                      {option}
+                    </option>
+                  ))
+                }
+              </select>
+            </div>
+
+            <div className="mx-4 my-4">
+              <p className="mb-2 text-lg">Observações</p>
+              <textarea
+                className="w-full border rounded-md outline-blue-500 p-2"
+                rows={3}
+              >
+              </textarea>
             </div>
 
             <div className="flex justify-center flex-col mt-4 px-4">
               <button className="text-center border w-full my-4 p-2 rounded-md bg-blue-500 text-white font-semibold cursor-pointer">
                 Cadastrar
               </button>
-              
+
               <NavLink to={"/"}>
                 <button className="text-center border w-full p-2 rounded-md border-blue-500 text-blue-500 font-semibold cursor-pointer">
                   Voltar

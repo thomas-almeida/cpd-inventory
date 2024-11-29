@@ -24,7 +24,7 @@ export default function Dashboard() {
               </div>
             </NavLink>
 
-            <NavLink to={"/form"}>
+            <NavLink to={"/printers"}>
               <div className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 cursor-pointer transition hover:scale-[1.02] hover:border-blue-400">
                 <h3 className="font-semibold text-xl mb-2">📝 Acessar Inventário </h3>
                 <p className="italic text-slate-500">
