@@ -38,25 +38,46 @@ export default function Dashboard() {
 
           <div className="md:grid grid-cols-2">
             <div className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 flex justify-center items-center">
-              <h3 className="font-semibold text-xl mb-2 w-[55%]">🖨 Impressoras no Inventário</h3>
-              <p className="text-6xl text-blue-500 text-center font-semibold w-[40%]">{totalPrinters}</p>
+              <div className="flex justify-center items-center">
+                <div className="w-[25%]">
+                  <h3 className="text-6xl">🖨</h3>
+                </div>
+                <div className="w-[80%] flex justify-center items-center">
+                  <h3 className="font-semibold text-xl mb-2 w-[55%]">Impressoras no Inventário</h3>
+                  <p className="text-6xl text-blue-500 text-center font-semibold w-[30%]">{totalPrinters}</p>
+                </div>
+              </div>
             </div>
 
             <NavLink to={"/form"}>
               <div className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 cursor-pointer transition hover:scale-[1.02] hover:border-blue-400">
-                <h3 className="font-semibold text-xl mb-2">📋 Cadastrar Impressora</h3>
-                <p className="italic text-slate-500">
-                  Realizar cadastro de novas impressoras no Inventário á partir dos dados solicitados
-                </p>
+                <div className="flex justify-center items-center">
+                  <div>
+                    <h3 className="text-6xl mr-2">📋</h3>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2">Cadastrar Impressora</h3>
+                    <p className="italic text-slate-500">
+                      Realizar cadastro de novas impressoras no Inventário
+                    </p>
+                  </div>
+                </div>
               </div>
             </NavLink>
 
             <NavLink to={"/printers"}>
               <div className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 cursor-pointer transition hover:scale-[1.02] hover:border-blue-400">
-                <h3 className="font-semibold text-xl mb-2">📝 Acessar Inventário </h3>
-                <p className="italic text-slate-500">
-                  Veja, exclua, edite ou mova impressoras de setor na listagem do inventário
-                </p>
+                <div className="flex justify-center items-center">
+                  <div>
+                    <h3 className="text-6xl mr-2">📝</h3>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-xl mb-2">Acessar Inventário </h3>
+                    <p className="italic text-slate-500">
+                      Veja, exclua, edite ou mova impressoras de setor na listagem do inventário
+                    </p>
+                  </div>
+                </div>
               </div>
             </NavLink>
 
@@ -64,10 +85,17 @@ export default function Dashboard() {
               className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 cursor-pointer transition hover:scale-[1.02] hover:border-blue-400"
               onClick={() => getPdfReportAction()}
             >
-              <h3 className="font-semibold text-xl mb-2">📄 Baixar Relatório</h3>
-              <p className="italic text-slate-500">
-                Baixe um PDF com a lista atualizada das impressoras do inventário
-              </p>
+              <div className="flex justify-center items-center">
+                <div>
+                  <h3 className="text-6xl mr-2">📄</h3>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-xl mb-2">Baixar Relatório</h3>
+                  <p className="italic text-slate-500">
+                    Baixe um PDF com a lista atualizada das impressoras
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
