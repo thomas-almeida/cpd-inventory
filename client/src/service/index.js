@@ -2,20 +2,29 @@ import axios from 'axios'
 import baseUrl from '../utils/baseUrl.js'
 
 const addPrinter = async (payload) => {
-  const response = await axios.post(`${baseUrl.localhostUrl}/add-printer`, payload)
+  const response = await axios.post(`${baseUrl.productionUrl}/add-printer`, payload)
   return response.data
 }
 
 const getPrinters = async () => {
-  const response = await axios.get(`${baseUrl.localhostUrl}/get-printers`)
+  const response = await axios.get(`${baseUrl.productionUrl}/get-printers`, {
+    headers: {
+      "ngrok-skip-browser-warning": "true"
+    }
+  })
   return response.data
 }
 
 const getPdfReport = async () => {
 
-  const response = await axios.get(`${baseUrl.localhostUrl}/get-pdf-report`, {
+  const response = await axios.get(`${baseUrl.productionUrl}/get-pdf-report`, {
     responseType: 'blob',
-  })
+  },
+    {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    })
 
   const url = window.URL.createObjectURL(new Blob([response.data]))
 
