@@ -1,18 +1,17 @@
 const printersOptions = [
-  'Selecione',
   'M-4070',
   'M-3020',
   'OKI'
 ]
 
 const fusorStatusOptions = [
-  'Selecione',
-  'BOM',
-  'RUIM'
+  'Peças OK',
+  'Peças Ruins',
+  'Fusor Ruim',
+  'Rolete Ruim',
 ]
 
 const levelsOptions = [
-  'Selecione',
   '01 Andar: Recepção',
   '01 Andar: Triagem',
   '01 Andar: Consultório',
