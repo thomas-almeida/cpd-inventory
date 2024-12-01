@@ -1,17 +1,15 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Dashboard from "./views/Dashboard"
-import Form from "./views/Form"
-import PrinterList from "./views/PrinterList"
+import { useState, useEffect } from "react"
+import service from "./service"
+import Home from "./views/Home"
 
 function App() {
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />}></Route>
-        <Route path="/form" element={<Form />}></Route>
-        <Route path="/printers" element={<PrinterList />}></Route>
+        <Route path="/" element={<Home />}></Route>
       </Routes>
     </Router>
   )

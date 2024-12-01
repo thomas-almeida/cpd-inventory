@@ -1,17 +1,18 @@
 const printersOptions = [
-  'M-4070',
-  'M-3020',
-  'OKI'
+  'SL-M4070',
+  'SL-M3020',
+  'OKI-C711' 
 ]
 
 const fusorStatusOptions = [
-  'Peças OK',
-  'Peças Ruins',
-  'Fusor Ruim',
-  'Rolete Ruim',
+  'BOM',
+  'RUIM',
 ]
 
 const levelsOptions = [
+  'CPD',
+  'Salão Nobre: Internação',
+  'Salão Nobre: Exames',
   '01 Andar: Recepção',
   '01 Andar: Triagem',
   '01 Andar: Consultório',
@@ -28,6 +29,23 @@ const levelsOptions = [
   '12 Andar: Recepção',
   '12 Andar: Supervisão',
   '12 Andar: Prescrição',
+  'PSA: Recepção',
+  'PSA: Triagem 01',
+  'PSA: Triagem 02',
+  'PSA: Medicação',
+  'PSA: Emergência',
+  'Ultrassom: Recepção',
+  'Endoscopia: Recepção',
+  'Ortopedia',
+  'Gerencia de Enfermagem',
+  'Agendamento Cirurgico',
+  'Central de Guias',
+  'Qualidade',
+  'DR. Ronaldo',
+  'ADM Exames',
+  'Faturamento 01',
+  'Faturamento 02',
+  'Faturamento 03',
 ]
 
 export default {

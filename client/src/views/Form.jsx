@@ -4,7 +4,13 @@ import { useState } from "react"
 import service from "../service/index.js"
 import options from "../utils/options.js"
 
-export default function Form() {
+export default function Form({
+  visible,
+  printersData,
+  setActiveScreen,
+  activeScreen,
+  refreshData
+}) {
 
 
   const [formData, setFormData] = useState({
@@ -45,14 +51,15 @@ export default function Form() {
       alert("Erro ao cadastrar impressora")
     } finally {
       setIsFetching(false)
+      refreshData()
     }
   }
 
   return (
     <>
-      <div className="flex justify-center items-center h-svh">
-        <div className="w-[90%] md:w-[50%]">
-          <h1 className="text-center font-bold text-xl mb-6">
+      <div className="flex justify-center items-center h-svh overflow-y-auto">
+        <div className="w-[90%] lg:w-[40%]">
+          <h1 className="text-center font-bold text-xl mb-2">
             Cadastro de Inventário
           </h1>
 
@@ -89,7 +96,7 @@ export default function Form() {
             </div>
 
             <div className="mx-4 my-4">
-              <p className="mb-2 text-lg">Estado (Fusor, Rolete)</p>
+              <p className="mb-2 text-lg">Estado da impressora (Fusor, Rolete, etc..)</p>
               <select
                 name="fusorStatus"
                 value={formData.fusorStatus}
@@ -133,7 +140,7 @@ export default function Form() {
                 value={formData.observation}
                 onChange={handleChange}
                 className="w-full border rounded-md outline-blue-500 p-2"
-                rows={3}
+                rows={1}
               ></textarea>
             </div>
 
@@ -146,14 +153,13 @@ export default function Form() {
                 {isFetching ? "Cadastrando..." : "Cadastrar"}
               </button>
 
-              <NavLink to={"/"}>
                 <button
                   type="button"
+                  onClick={() => setActiveScreen('dashboard')}
                   className="text-center border w-full p-2 rounded-md border-blue-500 text-blue-500 font-semibold cursor-pointer"
                 >
                   Voltar
                 </button>
-              </NavLink>
             </div>
           </form>
         </div>
