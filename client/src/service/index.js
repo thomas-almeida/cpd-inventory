@@ -22,14 +22,14 @@ const getPrinters = async () => {
 
 const getPdfReport = async () => {
 
-  const response = await axios.get(`${baseUrl.productionUrl}/get-pdf-report`, {
-    responseType: 'blob',
-  },
+  const response = await axios.get(`${baseUrl.productionUrl}/get-pdf-report`,
     {
       headers: {
         "ngrok-skip-browser-warning": "true"
-      }
-    })
+      },
+      responseType: 'blob'
+    }
+  )
 
   const url = window.URL.createObjectURL(new Blob([response.data]))
 
@@ -42,9 +42,32 @@ const getPdfReport = async () => {
 
 }
 
+const getDisposalReport = async () => {
+
+  const response = await axios.get(`${baseUrl.productionUrl}/get-disposal-report`,
+    {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      },
+      responseType: 'blob'
+    }
+  )
+
+  const url = window.URL.createObjectURL(new Blob([response.data]))
+
+  const link = document.createElement('a')
+  link.href = url
+  link.setAttribute('download', 'relatório_descarte_staclara.pdf')
+  document.body.appendChild(link)
+  link.click()
+  link.parentNode.removeChild(link)
+
+}
+
 export default {
   addPrinter,
   getPrinters,
   getPdfReport,
+  getDisposalReport,
   addDisposalIntent
 }
