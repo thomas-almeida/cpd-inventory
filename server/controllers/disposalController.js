@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import PDFDocument, { file } from 'pdfkit'
+import PDFDocument from 'pdfkit'
 import axios from 'axios'
 import urls from "../utils/urls.js"
 
