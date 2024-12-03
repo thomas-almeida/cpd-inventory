@@ -28,19 +28,20 @@ export default function DisposalForm({
   }
 
   const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
+    const { value, checked } = e.target
+    console.log(e.target.value, formData.pecas)
     setFormData((prevData) => {
       const updatedOptions = checked
         ? [...prevData.pecas, value] // Adiciona a opção selecionada
-        : prevData.pecas.filter((item) => item !== value); // Remove a opção desmarcada
+        : prevData.pecas.filter((item) => item !== value) // Remove a opção desmarcada
       return {
         ...prevData,
-        hardwareOptions: updatedOptions,
-      };
-    });
-  };
+        pecas: updatedOptions,
+      }
+    })
+  }
 
-  async function addDisposalIntentAction(params) {
+  async function addDisposalIntentAction(e) {
     e.preventDefault()
     setIsFetching(true)
 
@@ -107,7 +108,7 @@ export default function DisposalForm({
                 <p className="mb-2 text-lg">Motivo do Descarte</p>
                 <input
                   type="text"
-                  name="numero de serie"
+                  name="motivo"
                   value={formData.motivo}
                   onChange={handleChange}
                   className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
@@ -119,7 +120,7 @@ export default function DisposalForm({
                 <p className="mb-2 text-lg">Observação</p>
                 <input
                   type="text"
-                  name="numero de serie"
+                  name="observacoes"
                   value={formData.observacoes}
                   onChange={handleChange}
                   className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
@@ -131,7 +132,7 @@ export default function DisposalForm({
                 <p className="mb-2 text-lg">Técnico responsável pelo descarte</p>
                 <input
                   type="text"
-                  name="numero de serie"
+                  name="responsavelTI"
                   value={formData.responsavelTI}
                   onChange={handleChange}
                   className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
@@ -142,15 +143,17 @@ export default function DisposalForm({
             </div>
 
             <div className="mx-4 my-4 ">
-            <p className="mb-2 text-lg">Peças do Equipamento</p>
+              <p className="mb-2 text-lg">Peças do Equipamento</p>
               <div className="grid grid-cols-3 mt-2 border p-2 rounded-md shadow-sm">
                 {
                   options.hardwareOptions.map((item, index) => (
                     <span className="flex">
-                      <input key={item[index]} 
-                        type="checkbox" 
-                        onChange={handleCheckboxChange} 
+                      <input
+                        key={item[index]}
+                        type="checkbox"
+                        onChange={handleCheckboxChange}
                         checked={formData.pecas.includes(item)}
+                        name={item}
                         value={item}
                         className="cursor-pointer"
                       />
