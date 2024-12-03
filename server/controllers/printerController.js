@@ -3,6 +3,8 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import idGenerator from '../utils/idGenerator.js'
 import PDFDocument from 'pdfkit'
+import axios from 'axios'
+import urls from '../utils/urls.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const dbPath = path.join(__dirname, '..', 'db', 'printers.json')
@@ -20,7 +22,7 @@ function checkReqId(printerId) {
   return printerId
 }
 
-function addPrinter(req, res) {
+async function addPrinter(req, res) {
   try {
 
     const { id, model, ipAddress, fusorStatus, level, observation } = req.body
@@ -50,9 +52,19 @@ function addPrinter(req, res) {
       printers.push(printerData)
     }
 
+    //send to google Sheets
+    const sheetsResponse = await axios.post(`${urls.googleSheetsUrlPrinters}`, req.body, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
     res.status(200).json({
       message: 'Impressora cadastrada com sucesso!',
-      data: printerData
+      data: {
+        localDB: printerData,
+        sheetsDB: sheetsResponse.data
+      }
     })
 
     fs.writeFileSync(dbPath, JSON.stringify(printers, null, 2))
