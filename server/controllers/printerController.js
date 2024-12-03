@@ -50,7 +50,7 @@ async function addPrinter(req, res) {
 
     } else {
       printers.push(printerData)
-    }
+    } 
 
     //send to google Sheets
     const sheetsResponse = await axios.post(`${urls.googleSheetsUrlPrinters}`, printerData, {
