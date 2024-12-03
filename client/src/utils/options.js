@@ -48,8 +48,18 @@ const levelsOptions = [
   'Faturamento 03',
 ]
 
+const hardwareOptions = [
+  'Gabinete',
+  'Placa-Mãe',
+  'Memória RAM',
+  'HD',
+  'Fonte',
+  'DVD'
+]
+
 export default {
   printersOptions,
   fusorStatusOptions,
-  levelsOptions
+  levelsOptions,
+  hardwareOptions
 }

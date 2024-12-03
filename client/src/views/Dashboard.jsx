@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { NavLink } from "react-router-dom"
 import service from "../service"
 
 export default function Dashboard({
@@ -45,7 +45,7 @@ export default function Dashboard({
                     <h3 className="text-6xl mr-2">📋</h3>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-xl mb-2">Cadastrar Impressora</h3>
+                    <h3 className="font-semibold text-xl mb-2">Nova Impressora</h3>
                     <p className="italic text-slate-500">
                       Realizar cadastro de novas impressoras no Inventário
                     </p>
@@ -62,13 +62,30 @@ export default function Dashboard({
                     <h3 className="text-6xl mr-2">📝</h3>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-xl mb-2">Acessar Inventário </h3>
+                    <h3 className="font-semibold text-xl mb-2">Ver Impressoras </h3>
                     <p className="italic text-slate-500">
                       Veja, exclua, edite ou mova impressoras de setor na listagem do inventário
                     </p>
                   </div>
                 </div>
               </div>
+
+                <div
+                  onClick={() => setActiveScreen('disposal-form') }
+                  className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 cursor-pointer transition hover:scale-[1.02] hover:border-blue-400"
+                >
+                  <div className="flex justify-center items-center">
+                    <div>
+                      <h3 className="text-6xl mr-2">🗑</h3>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-xl mb-2">Formulário de Descarte</h3>
+                      <p className="italic text-slate-500">
+                        Acesse o formulário para cadastro de itens para descarte
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
               <div
                 className="border-4 p-4 py-6 my-2 rounded-md shadow-sm h-[150px] mx-2 cursor-pointer transition hover:scale-[1.02] hover:border-blue-400"

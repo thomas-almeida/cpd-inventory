@@ -6,6 +6,11 @@ const addPrinter = async (payload) => {
   return response.data
 }
 
+const addDisposalIntent = async (payload) => {
+  const response = await axios.post(`${baseUrl.productionUrl}/send-disposal-form`, payload)
+  return response.data
+}
+
 const getPrinters = async () => {
   const response = await axios.get(`${baseUrl.productionUrl}/get-printers`, {
     headers: {
@@ -40,5 +45,6 @@ const getPdfReport = async () => {
 export default {
   addPrinter,
   getPrinters,
-  getPdfReport
+  getPdfReport,
+  addDisposalIntent
 }
