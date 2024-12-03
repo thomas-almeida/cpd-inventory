@@ -46,8 +46,10 @@ export default function DisposalForm({
     setIsFetching(true)
 
     try {
+      const pecasStringfy = formData.pecas.toString()
+      const payload = {...formData, pecas: pecasStringfy}
 
-      const response = await service.addDisposalIntent(formData)
+      const response = await service.addDisposalIntent(payload)
       alert(response.message || "Equipamento de Descarte Adionado")
 
       setFormData({
