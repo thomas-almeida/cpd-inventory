@@ -53,7 +53,7 @@ async function addPrinter(req, res) {
     }
 
     //send to google Sheets
-    const sheetsResponse = await axios.post(`${urls.googleSheetsUrlPrinters}`, req.body, {
+    const sheetsResponse = await axios.post(`${urls.googleSheetsUrlPrinters}`, printerData, {
       headers: {
         'Content-Type': 'application/json'
       }
