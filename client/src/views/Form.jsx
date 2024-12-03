@@ -69,7 +69,7 @@ export default function Form({
                 name="model"
                 value={formData.model}
                 onChange={handleChange}
-                className="border text-black cursor-pointer py-1 px-2 w-full text-lg"
+                className="border-2 rounded-md outline-blue-500 text-black cursor-pointer py-1 px-2 w-full text-lg"
               >
                 <option value="" disabled>
                   Selecione
@@ -89,7 +89,7 @@ export default function Form({
                 name="ipAddress"
                 value={formData.ipAddress}
                 onChange={handleChange}
-                className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                className="border-2 rounded-md outline-blue-500 px-2 py-1 w-full text-lg"
                 placeholder="192.168.11.190"
               />
             </div>
@@ -100,7 +100,7 @@ export default function Form({
                 name="fusorStatus"
                 value={formData.fusorStatus}
                 onChange={handleChange}
-                className="border text-black cursor-pointer py-1 px-2 w-full text-lg"
+                className="border-2 rounded-md outline-blue-500 text-black cursor-pointer py-1 px-2 w-full text-lg"
               >
                 <option value="" disabled>
                   Selecione
@@ -119,7 +119,7 @@ export default function Form({
                 name="level"
                 value={formData.level}
                 onChange={handleChange}
-                className="border text-black cursor-pointer py-1 px-2 w-full text-lg"
+                className="border-2 rounded-md outline-blue-500 text-black cursor-pointer py-1 px-2 w-full text-lg"
               >
                 <option value="" disabled>
                   Selecione
@@ -138,7 +138,7 @@ export default function Form({
                 name="observation"
                 value={formData.observation}
                 onChange={handleChange}
-                className="w-full border rounded-md outline-blue-500 p-2"
+                className="border-2 w-full rounded-md outline-blue-500 p-2"
                 rows={1}
               ></textarea>
             </div>

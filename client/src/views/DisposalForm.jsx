@@ -91,7 +91,7 @@ export default function DisposalForm({
                   name="patrimonio"
                   value={formData.patrimonio}
                   onChange={handleChange}
-                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  className="border-2 rounded-md shadow-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="Ex: 102485"
                 />
               </div>
@@ -103,7 +103,7 @@ export default function DisposalForm({
                   name="modelo"
                   value={formData.modelo}
                   onChange={handleChange}
-                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  className="border-2 rounded-md shadow-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="Samsung"
                 />
               </div>
@@ -115,7 +115,7 @@ export default function DisposalForm({
                   name="motivo"
                   value={formData.motivo}
                   onChange={handleChange}
-                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  className="border-2 rounded-md shadow-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="Peças queimadas"
                 />
               </div>
@@ -127,7 +127,7 @@ export default function DisposalForm({
                   name="observacoes"
                   value={formData.observacoes}
                   onChange={handleChange}
-                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  className="border-2 rounded-md shadow-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="..."
                 />
               </div>
@@ -139,7 +139,7 @@ export default function DisposalForm({
                   name="responsavelTI"
                   value={formData.responsavelTI}
                   onChange={handleChange}
-                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  className="border-2 rounded-md shadow-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="Nome do Técnico"
                 />
               </div>
@@ -151,7 +151,7 @@ export default function DisposalForm({
                   name="data"
                   value={formData.data}
                   onChange={handleChange}
-                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  className="border-2 rounded-md shadow-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="03/12/2024"
                 />
               </div>
@@ -160,7 +160,7 @@ export default function DisposalForm({
 
             <div className="mx-4 my-4 ">
               <p className="mb-2 text-lg">Peças do Equipamento</p>
-              <div className="grid grid-cols-3 mt-2 border p-2 rounded-md shadow-sm">
+              <div className="grid grid-cols-3 mt-2 border-2 p-4 rounded-md shadow-sm">
                 {
                   options.hardwareOptions.map((item, index) => (
                     <span className="flex">
@@ -186,7 +186,7 @@ export default function DisposalForm({
                 disabled={isFetching}
                 className="text-center border w-full my-4 p-2 rounded-md bg-blue-500 text-white font-semibold cursor-pointer"
               >
-                {isFetching ? "Cadastrando..." : "Cadastrar"}
+                {isFetching ? "Adicionando..." : "Adioionar ao Descarte"}
               </button>
 
               <button
