@@ -13,7 +13,8 @@ async function sendForm(req, res) {
     // Retorna a resposta do Google Apps Script para o frontend
     res.status(200).json({
       message: 'success',
-      data: response.data
+      data: response.data,
+      form: req.body
     })
   } catch (error) {
     console.error('Erro ao enviar para o Google Apps Script:', error);
