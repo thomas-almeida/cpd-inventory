@@ -1,6 +1,6 @@
 const printersOptions = [
-  'SL-M4070',
-  'SL-M3020',
+  'SL-M4070FR',
+  'SL-M4020ND',
   'OKI-C711' 
 ]
 
