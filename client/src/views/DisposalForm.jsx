@@ -14,7 +14,8 @@ export default function DisposalForm({
     motivo: "",
     pecas: [],
     observacoes: "",
-    responsavelTI: ""
+    responsavelTI: "",
+    data: ""
   })
 
   const [isFetching, setIsFetching] = useState(false)
@@ -58,7 +59,8 @@ export default function DisposalForm({
         motivo: "",
         pecas: [],
         observacoes: "",
-        responsavelTI: ""
+        responsavelTI: "",
+        data: ""
       })
 
     } catch (err) {
@@ -131,7 +133,7 @@ export default function DisposalForm({
               </div>
 
               <div className="mx-4 my-4">
-                <p className="mb-2 text-lg">Técnico responsável pelo descarte</p>
+                <p className="mb-2 text-lg">Técnico responsável</p>
                 <input
                   type="text"
                   name="responsavelTI"
@@ -139,6 +141,18 @@ export default function DisposalForm({
                   onChange={handleChange}
                   className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
                   placeholder="Nome do Técnico"
+                />
+              </div>
+
+              <div className="mx-4 my-4">
+                <p className="mb-2 text-lg">Data do descarte</p>
+                <input
+                  type="text"
+                  name="data"
+                  value={formData.data}
+                  onChange={handleChange}
+                  className="border rounded-sm outline-blue-500 px-2 py-1 w-full text-lg"
+                  placeholder="03/12/2024"
                 />
               </div>
 
